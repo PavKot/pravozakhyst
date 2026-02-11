@@ -548,6 +548,16 @@
             <p class="quiz-results-text" id="quizResultText">
               Результат надіслано!
             </p>
+            <p
+              class="quiz-results-text"
+              id="quizCongrats"
+              style="
+                display: none;
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 30px;
+              "
+            ></p>
             <a href="index.html" class="btn btn-primary">На головну</a>
           </div>
         </div>
@@ -732,7 +742,11 @@
 
         document.getElementById("quizScore").textContent = score;
         document.getElementById("quizResultText").textContent =
-          "Ваш результат записано! Ми зв'яжемось з вами найближчим часом.";
+          "Результат записано!";
+        const congratsEl = document.getElementById("quizCongrats");
+        congratsEl.style.display = "block";
+        congratsEl.textContent =
+          "Вітаємо з проходженням теоретичного курсу вивчення матеріальної частини зброї та поводження з нею! Для отримання довідки Вам необхідно пройти практичний курс стрільб зі зброї. Протягом доби з Вами зв'яжеться наш представник.";
 
         // Send test data to Google Sheets
         try {
@@ -740,7 +754,7 @@
             phone: userPhone,
             testScore: score,
             timestamp: new Date().toLocaleString("uk-UA"),
-            type: "quiz_only", // To distinguish from registration+quiz
+            type: "quiz_results",
           };
 
           await fetch(GOOGLE_SCRIPT_URL, {
