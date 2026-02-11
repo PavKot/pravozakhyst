@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>МПП "Правозахист" - Професійна охорона та безпека</title>
+    <meta
+      name="description"
+      content="Фізична та технічна охорона, відеоспостереження, групи швидкого реагування в Хмельницькому. Ліцензовані послуги безпеки."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <span class="logo-icon"
+            ><i class="fa-solid fa-shield-halved"></i
+          ></span>
+          <div class="logo-text">
+            <span class="logo-title">ПРАВОЗАХИСТ</span>
+            <span class="logo-subtitle">Мале приватне підприємство</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="#about" class="nav-link">Про компанію</a></li>
+            <li><a href="#services" class="nav-link">Послуги</a></li>
+            <li><a href="#training" class="nav-link">Навчальний центр</a></li>
+            <li><a href="#contacts" class="nav-link">Контакти</a></li>
+          </ul>
+        </nav>
+        <div class="header-contacts">
+          <a href="tel:+380998984948" class="phone-btn">
+            <i class="fa-solid fa-phone"></i> 099-89-84-948
+          </a>
+          <a
+            href="tel:+380973727078"
+            class="phone-btn"
+            style="margin-left: 20px"
+          >
+            <i class="fa-solid fa-phone"></i> 097-37-27-078
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Відкрити меню">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+          <h1 class="hero-title">
+            <span class="hero-subtitle"
+              >Якісне навчання<br />в Хмельницькому</span
+            >
+            Навчання за професією охоронник та вивчення матеріальної частини
+            зброї та спецзасобів
+          </h1>
+          <p class="hero-description">
+            Професійна підготовка охоронників з видачею свідоцтва державного
+            зразка. Вивчення матеріальної частини зброї для отримання довідки.
+          </p>
+          <div class="hero-buttons">
+            <a href="#training" class="btn btn-primary">Записатись</a>
+            <a href="registration.html" class="btn btn-outline">Реєстрація</a>
+            <a href="quiz.html" class="btn btn-outline">Скласти тест</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="training" id="training">
+        <div class="container training-container">
+          <div class="training-content">
+            <h2 class="section-title">Навчальний центр</h2>
+            <p>
+              МПП «Правозахист» має ліцензію Міносвіти на функціонування
+              професійно-технічного закладу.
+            </p>
+            <p>
+              Ми проводимо навчання за професією
+              <strong>«Охоронник» 1-3 кваліфікаційних розрядів</strong> з
+              видачею свідоцтва державного зразка.
+            </p>
+            <p>Співпрацюємо з ДСО, поліцією охорони та муніципальною вартою.</p>
+            <div class="training-buttons">
+              <a href="#contacts" class="btn btn-primary"
+                >Записатись на навчання</a
+              >
+              <a href="registration.html" class="btn btn-outline">Реєстрація</a>
+              <a href="quiz.html" class="btn btn-outline">Скласти тест</a>
+            </div>
+          </div>
+          <div class="training-slider">
+            <div class="slider-container">
+              <div class="slider-wrapper">
+                <div
+                  class="slide active"
+                  style="background-image: url(&quot;assets/img9.jpeg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img10.jpeg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img11.jpg&quot;)"
+                ></div>
+              </div>
+              <button
+                class="slider-btn slider-btn-prev"
+                aria-label="Попереднє зображення"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                class="slider-btn slider-btn-next"
+                aria-label="Наступне зображення"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <div class="slider-dots">
+                <button
+                  class="slider-dot active"
+                  data-slide="0"
+                  aria-label="Слайд 1"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="1"
+                  aria-label="Слайд 2"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="2"
+                  aria-label="Слайд 3"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Дубльована секція навчального центру зі зміненими місцями -->
+      <section class="training training-reversed" id="training-weapons">
+        <div class="container training-container training-container-reversed">
+          <div class="training-slider">
+            <div class="slider-container">
+              <div class="slider-wrapper">
+                <div
+                  class="slide active"
+                  style="background-image: url(&quot;assets/img12.jpg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img15.jpg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img16.jpg&quot;)"
+                ></div>
+              </div>
+              <button
+                class="slider-btn slider-btn-prev"
+                aria-label="Попереднє зображення"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                class="slider-btn slider-btn-next"
+                aria-label="Наступне зображення"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <div class="slider-dots">
+                <button
+                  class="slider-dot active"
+                  data-slide="0"
+                  aria-label="Слайд 1"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="1"
+                  aria-label="Слайд 2"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="2"
+                  aria-label="Слайд 3"
+                ></button>
+              </div>
+            </div>
+          </div>
+          <div class="training-content">
+            <h2 class="section-title">
+              Вивчення матеріальної частини зброї для отримання довідки
+            </h2>
+            <p>
+              Працює пункт вивчення матеріальної частини зброї, спеціальних
+              засобів, правил поводження з ними та їх застосування.
+            </p>
+            <p>
+              Діяльність пункту здійснюється відповідно до вимог Постанови КМ
+              України від 12 жовтня 1992 року №576 та наказу МВС України №622
+              від 21.08.98, які регламентують порядок виготовлення, придбання,
+              зберігання, обліку, перевезення та використання вогнепальної,
+              пневматичної зброї, пристроїв вітчизняного виробництва для
+              відстрілу патронів, споряджених гумовими чи аналогічними за своїми
+              властивостями металевими снарядами несмертельної дії, та патронів
+              до них, а також боєприпасів до зброї, основних частин зброї.
+            </p>
+            <p>
+              Після успішного закінчення навчального курсу і здачі заліку,
+              видається довідка встановленого зразка з вивчення матеріальної
+              частини зброї та правил безпеки поводження з ним.
+            </p>
+            <div class="training-buttons">
+              <a href="registration.html" class="btn btn-primary"
+                >Записатись на навчання</a
+              >
+              <a href="registration.html" class="btn btn-outline">Реєстрація</a>
+              <a href="quiz.html" class="btn btn-outline">Скласти тест</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="algorithm" id="algorithm">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Алгоритм проходження навчання</h2>
+            <p class="section-subtitle">
+              Прості кроки для отримання довідки про проходження навчання
+            </p>
+          </div>
+          <div class="steps-container">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-icon">
+                <i class="fa-solid fa-user-plus"></i>
+              </div>
+              <h3>Реєстрація на навчання</h3>
+              <p>Запишіться на вивчення матеріально-технічної частини зброї</p>
+              <a href="registration.html" class="btn btn-outline">Реєстрація</a>
+            </div>
+
+            <div class="step-arrow">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h3>Підготовка до тесту</h3>
+              <p>
+                Отримайте доступ до навчального посібника після успішної
+                реєстрації
+              </p>
+            </div>
+
+            <div class="step-arrow">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <h3>Проходження тесту</h3>
+              <p>
+                Складіть тест на знання матеріальної частини та безпечного
+                поводження зі зброєю
+              </p>
+              <a href="quiz.html" class="btn btn-outline">Скласти тест</a>
+            </div>
+
+            <div class="step-arrow">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <h3>Зв'яжемось з вами</h3>
+              <p>
+                Після складання тесту ми зв'яжемось з вами для подальших кроків
+                отримання довідки
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Чому обирають нас</h2>
+            <p class="section-subtitle">
+              Багаторічний досвід та державна ліцензія
+            </p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-file-contract"></i>
+              </div>
+              <h3>Ліцензована діяльність</h3>
+              <p>
+                Ліцензія МВС України АВ 592398 від 30.09.2011. Всі послуги
+                надаються згідно законодавства.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+              <h3>Професійні кадри</h3>
+              <p>
+                Власний навчальний центр для підготовки охоронників 1-3
+                розрядів. Кваліфікований персонал.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+              <h3>Швидке навчання</h3>
+              <p>
+                Оперативно проводимо курси підготовки охоронників та навчання з
+                матеріальної частини зброї. Гнучкий графік занять.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секція наші послуги закоментована
+      <section class="services" id="services">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Наші послуги</h2>
+            <p class="section-subtitle">Комплексні рішення для вашої безпеки</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <div
+                class="service-image"
+                style="background-image: url(&quot;assets/img6.jpg&quot;)"
+              ></div>
+              <div class="service-content">
+                <h3>Фізична охорона</h3>
+                <ul class="service-list">
+                  <li>Охорона офісів, ТРЦ, підприємств</li>
+                  <li>Безпека на будівництвах та складах</li>
+                  <li>Охорона масових заходів</li>
+                  <li>Супровід цінних вантажів</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-card">
+              <div
+                class="service-image"
+                style="background-image: url(&quot;assets/img7.jpg&quot;)"
+              ></div>
+              <div class="service-content">
+                <h3>Технічна охорона</h3>
+                <ul class="service-list">
+                  <li>Монтаж систем відеоспостереження</li>
+                  <li>Обслуговування систем безпеки</li>
+                  <li>Пультова охорона</li>
+                </ul>
+              </div>
+            </div>
+            <div class="service-card">
+              <div
+                class="service-image"
+                style="background-image: url(&quot;assets/img8.jpg&quot;)"
+              ></div>
+              <div class="service-content">
+                <h3>Групи швидкого реагування</h3>
+                <ul class="service-list">
+                  <li>Виїзд за сигналом тривоги</li>
+                  <li>Запобігання злочинним діям</li>
+                  <li>Цілодобове чергування</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- Секція фотогалереї закоментована
+      <section
+        class="gallery"
+        id="gallery"
+        style="padding: 100px 0; background-color: var(--primary)"
+      >
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Фотогалерея</h2>
+            <p class="section-subtitle">Життя нашого підприємства</p>
+          </div>
+          <div class="training-slider">
+            <div class="slider-container">
+              <div class="slider-wrapper">
+                <div
+                  class="slide active"
+                  style="background-image: url(&quot;assets/img5.jpg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img1.jpeg&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;assets/img2.jpg&quot;)"
+                ></div>
+              </div>
+              <button
+                class="slider-btn slider-btn-prev"
+                aria-label="Попереднє зображення"
+              >
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button
+                class="slider-btn slider-btn-next"
+                aria-label="Наступне зображення"
+              >
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <div class="slider-dots">
+                <button
+                  class="slider-dot active"
+                  data-slide="0"
+                  aria-label="Слайд 1"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="1"
+                  aria-label="Слайд 2"
+                ></button>
+                <button
+                  class="slider-dot"
+                  data-slide="2"
+                  aria-label="Слайд 3"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <section class="contacts" id="contacts">
+        <div class="container">
+          <div class="contacts-grid">
+            <div class="contact-info">
+              <h2 class="section-title">Контакти</h2>
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <h4>Адреса</h4>
+                  <p>м. Хмельницький, проспект Миру, 63, офіс 14</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                  <h4>Телефони</h4>
+                  <p>
+                    <a href="tel:+380998984948">099-89-84-948</a><br />
+                    <a href="tel:+380973727078">097-37-27-078</a>
+                  </p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>
+                    <a href="mailto:pravozahyst-hm@ukr.net"
+                      >pravozahyst-hm@ukr.net</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="bank-details">
+                <h4>Реквізити:</h4>
+                <p>ЄДРПОУ: 32179838</p>
+                <p>р/р UA683154050000026009060101411</p>
+                <p>ПриватБанк</p>
+              </div>
+            </div>
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2112.969698716335!2d26.98030531600746!3d49.43573697934827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4732064101e18d6f%3A0xc0c427387227d819!2z0L_RgNC-0YHQvy4g0JzQuNGA0LAsIDYzLCDQpdC80LXQu9GM0L3QuNGG0LrQu0ksINCl0LzQtdC70YzQvdC40YfQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDI5MDAw!5e0!3m2!1suk!2sua!4v1703600000000!5m2!1suk!2sua"
+                width="100%"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          &copy; <span id="currentYear"></span> МПП «Правозахист». Всі права
+          захищено.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Реєстрація на отримання довідки - МПП "Правозахист"</title>
+    <meta
+      name="description"
+      content="Реєстрація на отримання довідки на зберігання та носіння зброї. МПП Правозахист - Хмельницький."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Registration Page Styles */
+      .registration-page {
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-bottom: 60px;
+        background: linear-gradient(135deg, var(--primary) 0%, #0d1f33 100%);
+      }
+
+      .registration-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .registration-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .registration-header .header-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .registration-header h1 {
+        font-size: 1.8rem;
+        color: var(--accent);
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+
+      .registration-header .header-description {
+        font-size: 1rem;
+        color: var(--text-main);
+        opacity: 0.9;
+      }
+
+      .payment-notice {
+        background: linear-gradient(
+          135deg,
+          rgba(212, 175, 55, 0.15),
+          rgba(212, 175, 55, 0.05)
+        );
+        border: 1px solid var(--accent);
+        border-radius: 12px;
+        padding: 30px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .payment-notice h2 {
+        color: var(--accent);
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .payment-notice h2 i {
+        font-size: 1.6rem;
+      }
+
+      .payment-amount {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--white);
+        margin-bottom: 25px;
+      }
+
+      .payment-amount span {
+        color: var(--accent);
+      }
+
+      .payment-details {
+        background-color: rgba(10, 25, 41, 0.6);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+        text-align: left;
+      }
+
+      .payment-details h4 {
+        margin-bottom: 15px;
+        color: var(--accent);
+        font-size: 1.1rem;
+      }
+
+      .payment-details p {
+        color: var(--text-muted);
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+      }
+
+      .payment-details p:last-child {
+        margin-bottom: 0;
+      }
+
+      .payment-details strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+
+      /* Form Styles */
+      .registration-form-container {
+        background-color: var(--primary-light);
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .registration-form-container h3 {
+        color: var(--accent);
+        margin-bottom: 30px;
+        font-size: 1.3rem;
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-main);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .form-group label .required {
+        color: #ef4444;
+        margin-left: 4px;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="date"],
+      .form-group input[type="tel"] {
+        width: 100%;
+        padding: 14px 18px;
+        background-color: rgba(10, 25, 41, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: var(--text-main);
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        transition: var(--transition);
+      }
+
+      .form-group input[type="text"]:focus,
+      .form-group input[type="date"]:focus,
+      .form-group input[type="tel"]:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+      }
+
+      .form-group input[type="text"]::placeholder {
+        color: var(--text-muted);
+      }
+
+      /* File Upload */
+      .file-upload-wrapper {
+        position: relative;
+      }
+
+      .file-upload-label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background-color: rgba(10, 25, 41, 0.6);
+        border: 2px dashed rgba(212, 175, 55, 0.4);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .file-upload-label:hover {
+        border-color: var(--accent);
+        background-color: rgba(212, 175, 55, 0.05);
+      }
+
+      .file-upload-label i {
+        font-size: 2.5rem;
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+
+      .file-upload-label span {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      .file-upload-label .upload-hint {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        opacity: 0.7;
+        margin-top: 8px;
+      }
+
+      .file-upload-input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+      }
+
+      .file-name {
+        margin-top: 10px;
+        color: var(--accent);
+        font-size: 0.9rem;
+        display: none;
+      }
+
+      .file-name.visible {
+        display: block;
+      }
+
+      /* Submit Button */
+      .submit-btn {
+        width: 100%;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--accent), #b89628);
+        color: var(--primary);
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: "Montserrat", sans-serif;
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* Back Link */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+
+      .back-link:hover {
+        color: var(--accent);
+      }
+
+      /* Success Message */
+      .success-message {
+        display: none;
+        background: linear-gradient(
+          135deg,
+          rgba(34, 197, 94, 0.2),
+          rgba(34, 197, 94, 0.1)
+        );
+        border: 1px solid #22c55e;
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .success-message.visible {
+        display: block;
+      }
+
+      .success-icon {
+        font-size: 5rem;
+        color: #22c55e;
+        margin-bottom: 25px;
+        display: inline-block;
+      }
+
+      .success-message h3 {
+        color: var(--white);
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+      }
+
+      .success-message p {
+        color: var(--text-muted);
+        margin-bottom: 35px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .success-actions {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .success-actions .btn {
+        padding: 18px 40px;
+        font-size: 1.1rem;
+        min-width: 280px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .success-actions .btn i {
+        font-size: 1.3rem;
+        color: inherit; /* Inherit button text color */
+      }
+
+      .success-actions .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+      }
+
+      /* Form validation */
+      .form-group input:invalid:not(:placeholder-shown) {
+        border-color: #ef4444;
+      }
+
+      /* ========== QUIZ STYLES ========== */
+      .quiz-container {
+        display: none;
+        background-color: var(--primary-light);
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .quiz-container.visible {
+        display: block;
+      }
+
+      .quiz-header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .quiz-header h2 {
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      .quiz-progress {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .quiz-progress-bar {
+        flex: 1;
+        max-width: 300px;
+        height: 8px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .quiz-progress-fill {
+        height: 100%;
+        background: linear-gradient(135deg, var(--accent), #b89628);
+        border-radius: 4px;
+        transition: width 0.3s ease;
+        width: 0%;
+      }
+
+      .quiz-progress-text {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        min-width: 60px;
+      }
+
+      .quiz-question {
+        margin-bottom: 30px;
+      }
+
+      .quiz-question h3 {
+        color: var(--white);
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+      }
+
+      .quiz-question-number {
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .quiz-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .quiz-option {
+        display: flex;
+        align-items: center;
+        padding: 16px 20px;
+        background-color: rgba(10, 25, 41, 0.6);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .quiz-option:hover {
+        border-color: var(--accent);
+        background-color: rgba(212, 175, 55, 0.1);
+      }
+
+      .quiz-option.selected {
+        border-color: var(--accent);
+        background-color: rgba(212, 175, 55, 0.2);
+      }
+
+      .quiz-option input {
+        display: none;
+      }
+
+      .quiz-option-letter {
+        width: 32px;
+        height: 32px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--accent);
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      .quiz-option.selected .quiz-option-letter {
+        background-color: var(--accent);
+        color: var(--primary);
+      }
+
+      .quiz-option-text {
+        color: var(--text-main);
+      }
+
+      .quiz-nav {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .quiz-nav-btn {
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: "Montserrat", sans-serif;
+        border: none;
+      }
+
+      .quiz-nav-btn.prev {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--text-main);
+      }
+
+      .quiz-nav-btn.prev:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .quiz-nav-btn.prev:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .quiz-nav-btn.next {
+        background: linear-gradient(135deg, var(--accent), #b89628);
+        color: var(--primary);
+      }
+
+      .quiz-nav-btn.next:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      }
+
+      .quiz-nav-btn.next:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Quiz Results */
+      .quiz-results {
+        display: none;
+        text-align: center;
+      }
+
+      .quiz-results.visible {
+        display: block;
+      }
+
+      .quiz-results-score {
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--accent);
+        margin-bottom: 15px;
+      }
+
+      .quiz-results-text {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+      }
+
+      .quiz-results.passed .quiz-results-icon {
+        color: #22c55e;
+      }
+
+      .quiz-results.failed .quiz-results-icon {
+        color: #ef4444;
+      }
+
+      .quiz-results-icon {
+        font-size: 5rem;
+        margin-bottom: 20px;
+      }
+
+      /* Medium screens */
+      @media (max-width: 768px) {
+        .registration-page {
+          padding-top: 80px;
+          padding-bottom: 40px;
+        }
+
+        .payment-notice h2 {
+          font-size: 1.2rem;
+        }
+
+        .quiz-question h3 {
+          font-size: 1.1rem;
+        }
+
+        .quiz-option {
+          padding: 14px 16px;
+        }
+
+        .quiz-option-letter {
+          width: 28px;
+          height: 28px;
+          margin-right: 12px;
+          font-size: 0.9rem;
+        }
+
+        .quiz-option-text {
+          font-size: 0.95rem;
+        }
+      }
+
+      /* Small screens */
+      @media (max-width: 600px) {
+        .registration-page {
+          padding-top: 70px;
+          padding-bottom: 30px;
+        }
+
+        .registration-container {
+          padding: 0 16px;
+        }
+
+        .registration-header {
+          margin-bottom: 30px;
+        }
+
+        .registration-header .header-subtitle {
+          font-size: 0.85rem;
+          letter-spacing: 1px;
+        }
+
+        .registration-header h1 {
+          font-size: 1.3rem;
+          line-height: 1.4;
+        }
+
+        .registration-header .header-description {
+          font-size: 0.9rem;
+        }
+
+        .registration-form-container,
+        .quiz-container {
+          padding: 24px 18px;
+          border-radius: 10px;
+        }
+
+        .registration-form-container h3 {
+          font-size: 1.1rem;
+          margin-bottom: 25px;
+        }
+
+        .payment-notice {
+          padding: 20px 16px;
+          margin-bottom: 30px;
+          border-radius: 10px;
+        }
+
+        .payment-notice h2 {
+          font-size: 1.1rem;
+          gap: 8px;
+        }
+
+        .payment-notice h2 i {
+          font-size: 1.3rem;
+        }
+
+        .payment-amount {
+          font-size: 1.3rem;
+          margin-bottom: 20px;
+        }
+
+        .payment-details {
+          padding: 18px 16px;
+        }
+
+        .payment-details h4 {
+          font-size: 1rem;
+          margin-bottom: 12px;
+        }
+
+        .payment-details p {
+          font-size: 0.9rem;
+        }
+
+        /* Form elements */
+        .form-group {
+          margin-bottom: 20px;
+        }
+
+        .form-group label {
+          font-size: 0.9rem;
+          margin-bottom: 6px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="tel"] {
+          padding: 12px 14px;
+          font-size: 16px; /* Prevents zoom on iOS */
+        }
+
+        .file-upload-label {
+          padding: 30px 15px;
+        }
+
+        .file-upload-label i {
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+
+        .file-upload-label span {
+          font-size: 0.9rem;
+        }
+
+        .file-upload-label .upload-hint {
+          font-size: 0.8rem;
+        }
+
+        .submit-btn {
+          padding: 14px 24px;
+          font-size: 1rem;
+        }
+
+        .back-link {
+          font-size: 0.9rem;
+          margin-bottom: 25px;
+        }
+
+        /* Quiz specific */
+        .quiz-header h2 {
+          font-size: 1.2rem;
+        }
+
+        .quiz-progress {
+          gap: 10px;
+        }
+
+        .quiz-progress-text {
+          font-size: 0.85rem;
+          min-width: 50px;
+        }
+
+        .quiz-question {
+          margin-bottom: 25px;
+        }
+
+        .quiz-question h3 {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        .quiz-options {
+          gap: 10px;
+        }
+
+        .quiz-option {
+          padding: 14px 14px;
+          border-radius: 6px;
+        }
+
+        .quiz-option-letter {
+          width: 26px;
+          height: 26px;
+          margin-right: 10px;
+          font-size: 0.85rem;
+        }
+
+        .quiz-option-text {
+          font-size: 0.9rem;
+          line-height: 1.5;
+        }
+
+        .quiz-nav {
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 25px;
+          padding-top: 20px;
+        }
+
+        .quiz-nav-btn {
+          width: 100%;
+          padding: 14px 20px;
+          font-size: 0.95rem;
+        }
+
+        .quiz-results-score {
+          font-size: 3rem;
+        }
+
+        .quiz-results-icon {
+          font-size: 4rem;
+        }
+
+        .quiz-results-text {
+          font-size: 1rem;
+        }
+
+        /* Success message */
+        .success-message {
+          padding: 30px 20px;
+          border-radius: 10px;
+        }
+
+        .success-message i {
+          font-size: 3rem;
+          margin-bottom: 15px;
+        }
+
+        .success-message h3 {
+          font-size: 1.3rem;
+        }
+
+        .success-message p {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 380px) {
+        .registration-container {
+          padding: 0 12px;
+        }
+
+        .registration-header h1 {
+          font-size: 1.15rem;
+        }
+
+        .registration-form-container,
+        .quiz-container {
+          padding: 20px 14px;
+        }
+
+        .payment-amount {
+          font-size: 1.2rem;
+        }
+
+        .quiz-question h3 {
+          font-size: 0.95rem;
+        }
+
+        .quiz-option-text {
+          font-size: 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"
+            ><i class="fa-solid fa-shield-halved"></i
+          ></span>
+          <div class="logo-text">
+            <span class="logo-title">ПРАВОЗАХИСТ</span>
+            <span class="logo-subtitle">Мале приватне підприємство</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html#about" class="nav-link">Про компанію</a>
+            </li>
+            <li><a href="index.html#services" class="nav-link">Послуги</a></li>
+            <li>
+              <a href="index.html#training" class="nav-link"
+                >Навчальний центр</a
+              >
+            </li>
+            <li><a href="index.html#contacts" class="nav-link">Контакти</a></li>
+          </ul>
+        </nav>
+        <div class="header-contacts">
+          <a href="tel:+380998984948" class="phone-btn">
+            <i class="fa-solid fa-phone"></i> 099-89-84-948
+          </a>
+          <a
+            href="tel:+380973727078"
+            class="phone-btn"
+            style="margin-left: 20px"
+          >
+            <i class="fa-solid fa-phone"></i> 097-37-27-078
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Відкрити меню">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="registration-page">
+      <div class="registration-container">
+        <a href="index.html" class="back-link">
+          <i class="fa-solid fa-arrow-left"></i> Повернутись на головну
+        </a>
+
+        <div class="registration-header">
+          <p class="header-subtitle">Реєстрація на навчання</p>
+          <h1>Вивчення матеріально-технічної частини зброї</h1>
+          <p class="header-description">
+            Отримання довідки на зберігання та носіння зброї
+          </p>
+        </div>
+
+        <div class="payment-notice" id="paymentNotice">
+          <h2><i class="fa-solid fa-info-circle"></i> Увага!</h2>
+          <p class="payment-amount">
+            Вартість реєстрації: <span>100 грн</span>
+          </p>
+          <div class="payment-details">
+            <h4>Реквізити для оплати:</h4>
+            <p><strong>ЄДРПОУ:</strong> 32179838</p>
+            <p><strong>р/р:</strong> UA683154050000026009060101411</p>
+            <p><strong>Банк:</strong> ПриватБанк</p>
+          </div>
+        </div>
+
+        <div class="registration-form-container" id="formContainer">
+          <h3>Заповніть форму реєстрації</h3>
+          <form id="registrationForm" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="surname"
+                >Прізвище <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="surname"
+                name="surname"
+                placeholder="Введіть прізвище"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="name">Ім'я <span class="required">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Введіть ім'я"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="patronymic"
+                >По батькові <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="patronymic"
+                name="patronymic"
+                placeholder="Введіть по батькові"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="birthdate"
+                >Дата народження <span class="required">*</span></label
+              >
+              <input type="date" id="birthdate" name="birthdate" required />
+            </div>
+
+            <div class="form-group">
+              <label for="city"
+                >Місто проживання <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Введіть місто проживання"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone"
+                >Номер телефону <span class="required">*</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+380 XX XXX XX XX"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label
+                >Скріншот квитанції про оплату
+                <span class="required">*</span></label
+              >
+              <div class="file-upload-wrapper">
+                <label class="file-upload-label" for="receipt">
+                  <i class="fa-solid fa-cloud-upload-alt"></i>
+                  <span>Натисніть для завантаження або перетягніть файл</span>
+                  <span class="upload-hint">PNG, JPG, JPEG до 5MB</span>
+                </label>
+                <input
+                  type="file"
+                  id="receipt"
+                  name="receipt"
+                  class="file-upload-input"
+                  accept="image/*"
+                  required
+                />
+              </div>
+              <div class="file-name" id="fileName"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fa-solid fa-paper-plane"></i> Надіслати заявку
+            </button>
+          </form>
+        </div>
+
+        <!-- REMOVED QUIZ SECTION - Now separate page -->
+
+        <div class="success-message" id="successMessage">
+          <i class="fa-solid fa-check-circle success-icon"></i>
+          <h3>Дякуємо за реєстрацію!</h3>
+          <p>
+            Ваші данні успішно надіслано. Тепер ви можете завантажити посібник
+            для підготовки та пройти тест.
+          </p>
+          <div class="success-actions">
+            <a href="download.html" class="btn btn-primary">
+              <i class="fa-solid fa-download"></i> Завантажити посібник
+            </a>
+            <a href="quiz.html" class="btn btn-primary">
+              <i class="fa-solid fa-clipboard-question"></i> Пройти тест
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          &copy; <span id="currentYear"></span> МПП «Правозахист». Всі права
+          захищено.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector(".nav");
+
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      }
+
+      // Dynamic year in footer
+      const yearElement = document.getElementById("currentYear");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      // File upload display
+      const fileInput = document.getElementById("receipt");
+      const fileNameDisplay = document.getElementById("fileName");
+
+      fileInput.addEventListener("change", function () {
+        if (this.files && this.files[0]) {
+          fileNameDisplay.textContent = "Обрано файл: " + this.files[0].name;
+          fileNameDisplay.classList.add("visible");
+        } else {
+          fileNameDisplay.textContent = "";
+          fileNameDisplay.classList.remove("visible");
+        }
+      });
+
+      // Google Apps Script URL
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbyA3We4pEGrSdy1pwxkNlx1WNaqKAd0Wj1OmLNaSKtKQ48u-AuZOI2yTJt-vgNbIK1I/exec";
+
+      // Form submission
+      const form = document.getElementById("registrationForm");
+      const formContainer = document.getElementById("formContainer");
+      const paymentNotice = document.getElementById("paymentNotice");
+      const successMessage = document.getElementById("successMessage");
+      const submitBtn = form.querySelector(".submit-btn");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Validate all fields
+        const surname = document.getElementById("surname").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const patronymic = document.getElementById("patronymic").value.trim();
+        const birthdate = document.getElementById("birthdate").value;
+        const city = document.getElementById("city").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const receipt = document.getElementById("receipt").files[0];
+
+        if (
+          !surname ||
+          !name ||
+          !patronymic ||
+          !birthdate ||
+          !city ||
+          !phone ||
+          !receipt
+        ) {
+          alert("Будь ласка, заповніть всі обов'язкові поля");
+          return;
+        }
+
+        // Disable button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML =
+          '<i class="fa-solid fa-spinner fa-spin"></i> Обробка...';
+
+        try {
+          // Convert file to base64
+          const fileBase64 = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(receipt);
+          });
+
+          // Prepare form data
+          const formData = {
+            surname: surname,
+            name: name,
+            patronymic: patronymic,
+            birthdate: birthdate,
+            city: city,
+            phone: phone,
+            receiptFileName: receipt.name,
+            receiptBase64: fileBase64,
+            timestamp: new Date().toLocaleString("uk-UA"),
+            type: "registration_only", // To distinguish from quiz
+          };
+
+          // Send to Google Sheets
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+
+          // Hide form, show success
+          formContainer.style.display = "none";
+          paymentNotice.style.display = "none";
+          successMessage.classList.add("visible");
+          successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        } catch (error) {
+          console.error("Error:", error);
+          alert("Виникла помилка. Спробуйте ще раз.");
+          submitBtn.disabled = false;
+          submitBtn.innerHTML =
+            '<i class="fa-solid fa-paper-plane"></i> Надіслати заявку';
+        }
+      });
+    </script>
+  </body>
+</html>

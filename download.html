@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завантаження посібника | МПП "Правозахист"</title>
+    <meta
+      name="description"
+      content="Завантажте посібник з вогневої підготовки від МПП Правозахист. Навчальні матеріали для охоронників."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .download-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .download-hero {
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--primary-light) 100%
+        );
+      }
+
+      .download-section {
+        flex: 1;
+        padding: 80px 0;
+        background-color: var(--primary);
+      }
+
+      .download-card {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: var(--primary-light);
+        border-radius: 16px;
+        padding: 50px;
+        border: 1px solid var(--border);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        text-align: center;
+      }
+
+      .download-icon {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, var(--accent), #b89628);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+      }
+
+      .download-icon i {
+        font-size: 3.5rem;
+        color: var(--primary);
+      }
+
+      .download-card h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: var(--white);
+      }
+
+      .download-card .subtitle {
+        color: var(--accent);
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        font-weight: 500;
+      }
+
+      .download-description {
+        color: var(--text-muted);
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+      }
+
+      .file-info {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 40px;
+        padding: 25px;
+        background-color: rgba(10, 25, 41, 0.5);
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .file-info-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--text-muted);
+      }
+
+      .file-info-item i {
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      .file-info-item span {
+        font-size: 0.95rem;
+      }
+
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        padding: 18px 50px;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .download-btn i {
+        font-size: 1.3rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+
+      .back-link:hover {
+        color: var(--accent);
+      }
+
+      /* Medium screens */
+      @media (max-width: 768px) {
+        .download-hero {
+          padding-top: 100px;
+          padding-bottom: 40px;
+        }
+
+        .download-section {
+          padding: 60px 0;
+        }
+
+        .download-card {
+          padding: 40px 30px;
+        }
+
+        .download-icon {
+          width: 100px;
+          height: 100px;
+        }
+
+        .download-icon i {
+          font-size: 3rem;
+        }
+      }
+
+      /* Small screens */
+      @media (max-width: 600px) {
+        .download-hero {
+          padding-top: 80px;
+          padding-bottom: 30px;
+        }
+
+        .download-section {
+          padding: 40px 0;
+        }
+
+        .download-card {
+          padding: 28px 20px;
+          margin: 0 16px;
+          border-radius: 12px;
+        }
+
+        .download-icon {
+          width: 80px;
+          height: 80px;
+          margin-bottom: 20px;
+        }
+
+        .download-icon i {
+          font-size: 2.5rem;
+        }
+
+        .download-card h1 {
+          font-size: 1.4rem;
+          margin-bottom: 12px;
+        }
+
+        .download-card .subtitle {
+          font-size: 1rem;
+          margin-bottom: 20px;
+        }
+
+        .download-description {
+          font-size: 0.9rem;
+          line-height: 1.7;
+          margin-bottom: 30px;
+        }
+
+        .file-info {
+          flex-direction: column;
+          gap: 12px;
+          padding: 20px;
+          margin-bottom: 30px;
+        }
+
+        .file-info-item {
+          gap: 10px;
+        }
+
+        .file-info-item span {
+          font-size: 0.9rem;
+        }
+
+        .download-btn {
+          padding: 14px 28px;
+          font-size: 0.95rem;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .back-link {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 380px) {
+        .download-card {
+          padding: 24px 16px;
+          margin: 0 12px;
+        }
+
+        .download-card h1 {
+          font-size: 1.25rem;
+        }
+
+        .download-card .subtitle {
+          font-size: 0.9rem;
+        }
+
+        .download-icon {
+          width: 70px;
+          height: 70px;
+        }
+
+        .download-icon i {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"
+            ><i class="fa-solid fa-shield-halved"></i
+          ></span>
+          <div class="logo-text">
+            <span class="logo-title">ПРАВОЗАХИСТ</span>
+            <span class="logo-subtitle">Мале приватне підприємство</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html#about" class="nav-link">Про компанію</a>
+            </li>
+            <li><a href="index.html#services" class="nav-link">Послуги</a></li>
+            <li>
+              <a href="index.html#training" class="nav-link"
+                >Навчальний центр</a
+              >
+            </li>
+            <li><a href="index.html#contacts" class="nav-link">Контакти</a></li>
+          </ul>
+        </nav>
+        <div class="header-contacts">
+          <a href="tel:+380998984948" class="phone-btn">
+            <i class="fa-solid fa-phone"></i> 099-89-84-948
+          </a>
+          <a
+            href="tel:+380973727078"
+            class="phone-btn"
+            style="margin-left: 20px"
+          >
+            <i class="fa-solid fa-phone"></i> 097-37-27-078
+          </a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Відкрити меню">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="download-page">
+      <section class="download-hero">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Навчальні матеріали</h2>
+            <p class="section-subtitle">
+              Завантажте посібник для самостійного вивчення
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="download-section">
+        <div class="container">
+          <div class="download-card">
+            <div class="download-icon">
+              <i class="fa-solid fa-crosshairs"></i>
+            </div>
+            <h1>Посібник з вогневої підготовки</h1>
+            <p class="subtitle">Навчальний матеріал для охоронників</p>
+            <p class="download-description">
+              Цей посібник містить теоретичні основи вогневої підготовки,
+              правила безпеки при поводженні зі зброєю, а також практичні
+              рекомендації для підготовки до отримання дозволу на зброю.
+              Рекомендовано для слухачів навчального центру МПП «Правозахист».
+            </p>
+
+            <div class="file-info">
+              <div class="file-info-item">
+                <i class="fa-solid fa-file-word"></i>
+                <span>Формат: DOCX</span>
+              </div>
+              <div class="file-info-item">
+                <i class="fa-solid fa-hard-drive"></i>
+                <span>Розмір: ~3.7 МБ</span>
+              </div>
+            </div>
+
+            <a
+              href="Посібник вогнева підготовка.docx"
+              download
+              class="btn btn-primary download-btn"
+            >
+              <i class="fa-solid fa-download"></i>
+              Завантажити посібник
+            </a>
+
+            <br />
+            <a href="index.html" class="back-link">
+              <i class="fa-solid fa-arrow-left"></i>
+              Повернутися на головну
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>
+          &copy; <span id="currentYear"></span> МПП «Правозахист». Всі права
+          захищено.
+        </p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
