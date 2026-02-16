@@ -518,7 +518,10 @@
               <i class="fa-solid fa-clipboard-question"></i> Тест з вогневої
               підготовки
             </h2>
-            <p style="color: var(--text-muted)">Дайте відповідь на 40 питань</p>
+            <p style="color: var(--text-muted)">
+              Дайте відповідь на 40 питань (прохідний бал: 32 правильні
+              відповіді)
+            </p>
             <div class="quiz-progress">
               <div class="quiz-progress-bar">
                 <div class="quiz-progress-fill" id="progressFill"></div>
@@ -594,6 +597,8 @@
       // Google Apps Script URL
       const GOOGLE_SCRIPT_URL =
         "https://script.google.com/macros/s/AKfycbyA3We4pEGrSdy1pwxkNlx1WNaqKAd0Wj1OmLNaSKtKQ48u-AuZOI2yTJt-vgNbIK1I/exec";
+      const PASSING_SCORE = 32;
+      const TOTAL_QUESTIONS = 40;
 
       let userPhone = "";
 
@@ -628,10 +633,28 @@
       let userAnswers = {};
 
       function initQuiz() {
-        quizQuestions = getRandomQuestions(40);
+        quizQuestions = getRandomQuestions(TOTAL_QUESTIONS);
         currentQuestion = 0;
         userAnswers = {};
+        resetQuizView();
         showQuestion();
+      }
+
+      function resetQuizView() {
+        const questionEl = document.getElementById("quizQuestion");
+        const navEl = document.querySelector(".quiz-nav");
+        const resultsEl = document.getElementById("quizResults");
+        const congratsEl = document.getElementById("quizCongrats");
+        const resultIconWrap = document.querySelector(".quiz-results-icon");
+        const resultIcon = resultIconWrap.querySelector("i");
+
+        questionEl.style.display = "block";
+        navEl.style.display = "flex";
+        resultsEl.classList.remove("visible");
+        congratsEl.style.display = "none";
+        congratsEl.textContent = "";
+        resultIconWrap.style.color = "#22c55e";
+        resultIcon.className = "fa-solid fa-trophy";
       }
 
       function showQuestion() {
@@ -732,6 +755,7 @@
         });
 
         const score = `${correctCount}/${quizQuestions.length}`;
+        const isPassed = correctCount >= PASSING_SCORE;
 
         // Hide question, show results
         document.getElementById("quizQuestion").style.display = "none";
@@ -741,18 +765,32 @@
         resultsEl.classList.add("visible");
 
         document.getElementById("quizScore").textContent = score;
-        document.getElementById("quizResultText").textContent =
-          "Результат записано!";
+        const resultTextEl = document.getElementById("quizResultText");
         const congratsEl = document.getElementById("quizCongrats");
-        congratsEl.style.display = "block";
-        congratsEl.textContent =
-          "Вітаємо з проходженням теоретичного курсу вивчення матеріальної частини зброї та поводження з нею! Для отримання довідки Вам необхідно пройти практичний курс стрільб зі зброї. Протягом доби з Вами зв'яжеться наш представник.";
+        const resultIconWrap = document.querySelector(".quiz-results-icon");
+        const resultIcon = resultIconWrap.querySelector("i");
+
+        if (isPassed) {
+          resultTextEl.textContent = `Результат записано! Прохідний бал: ${PASSING_SCORE}/${quizQuestions.length}`;
+          congratsEl.style.display = "block";
+          congratsEl.textContent =
+            "Вітаємо з проходженням теоретичного курсу вивчення матеріальної частини зброї та поводження з нею! Для отримання довідки Вам необхідно пройти практичний курс стрільб зі зброї. Протягом доби з Вами зв'яжеться наш представник.";
+          resultIconWrap.style.color = "#22c55e";
+          resultIcon.className = "fa-solid fa-trophy";
+        } else {
+          resultTextEl.textContent = `Недостатньо правильних відповідей. Прохідний бал: ${PASSING_SCORE}/${quizQuestions.length}`;
+          congratsEl.style.display = "block";
+          congratsEl.textContent = `Ви набрали ${score}. Тест автоматично розпочнеться знову через 3 секунди.`;
+          resultIconWrap.style.color = "#f97316";
+          resultIcon.className = "fa-solid fa-rotate-right";
+        }
 
         // Send test data to Google Sheets
         try {
           const testData = {
             phone: userPhone,
             testScore: score,
+            passed: isPassed ? "yes" : "no",
             timestamp: new Date().toLocaleString("uk-UA"),
             type: "quiz_results",
           };
@@ -767,6 +805,12 @@
           });
         } catch (error) {
           console.error("Error sending data:", error);
+        }
+
+        if (!isPassed) {
+          setTimeout(() => {
+            initQuiz();
+          }, 3000);
         }
       }
     </script>
