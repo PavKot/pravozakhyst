@@ -1011,14 +1011,14 @@
                 <label class="file-upload-label" for="receipt">
                   <i class="fa-solid fa-cloud-upload-alt"></i>
                   <span>Натисніть для завантаження або перетягніть файл</span>
-                  <span class="upload-hint">PNG, JPG, JPEG до 5MB</span>
+                  <span class="upload-hint">PNG, JPG, JPEG, PDF до 5MB</span>
                 </label>
                 <input
                   type="file"
                   id="receipt"
                   name="receipt"
                   class="file-upload-input"
-                  accept="image/*"
+                  accept="image/*,.pdf,application/pdf"
                   required
                 />
               </div>
@@ -1105,6 +1105,12 @@
 
       form.addEventListener("submit", async function (e) {
         e.preventDefault();
+        const allowedFileTypes = [
+          "image/png",
+          "image/jpeg",
+          "image/jpg",
+          "application/pdf",
+        ];
 
         // Validate all fields
         const surname = document.getElementById("surname").value.trim();
@@ -1125,6 +1131,13 @@
           !receipt
         ) {
           alert("Будь ласка, заповніть всі обов'язкові поля");
+          return;
+        }
+        if (
+          !allowedFileTypes.includes(receipt.type) &&
+          !receipt.name.toLowerCase().endsWith(".pdf")
+        ) {
+          alert("Дозволені формати файлу: PNG, JPG, JPEG, PDF");
           return;
         }
 
