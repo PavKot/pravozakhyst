@@ -1003,6 +1003,61 @@
             </div>
 
             <div class="form-group">
+              <label for="passportSeriesNumber"
+                >Серія і номер паспорта
+                <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="passportSeriesNumber"
+                name="passportSeriesNumber"
+                placeholder="Введіть серію та номер паспорта"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="passportIssueDate"
+                >Дата видачі паспорта
+                <span class="required">*</span></label
+              >
+              <input
+                type="date"
+                id="passportIssueDate"
+                name="passportIssueDate"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="passportIssuedBy"
+                >Орган, що видав паспорт
+                <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="passportIssuedBy"
+                name="passportIssuedBy"
+                placeholder="Введіть назву органу"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="identificationCode"
+                >Ідентифікаційний код
+                <span class="required">*</span></label
+              >
+              <input
+                type="text"
+                id="identificationCode"
+                name="identificationCode"
+                placeholder="Введіть ідентифікаційний код"
+                required
+              />
+            </div>
+
+            <div class="form-group">
               <label
                 >Скріншот квитанції про оплату
                 <span class="required">*</span></label
@@ -1119,6 +1174,17 @@
         const birthdate = document.getElementById("birthdate").value;
         const city = document.getElementById("city").value.trim();
         const phone = document.getElementById("phone").value.trim();
+        const passportSeriesNumber = document
+          .getElementById("passportSeriesNumber")
+          .value.trim();
+        const passportIssueDate =
+          document.getElementById("passportIssueDate").value;
+        const passportIssuedBy = document
+          .getElementById("passportIssuedBy")
+          .value.trim();
+        const identificationCode = document
+          .getElementById("identificationCode")
+          .value.trim();
         const receipt = document.getElementById("receipt").files[0];
 
         if (
@@ -1128,6 +1194,10 @@
           !birthdate ||
           !city ||
           !phone ||
+          !passportSeriesNumber ||
+          !passportIssueDate ||
+          !passportIssuedBy ||
+          !identificationCode ||
           !receipt
         ) {
           alert("Будь ласка, заповніть всі обов'язкові поля");
@@ -1163,6 +1233,10 @@
             birthdate: birthdate,
             city: city,
             phone: phone,
+            passportSeriesNumber: passportSeriesNumber,
+            passportIssueDate: passportIssueDate,
+            passportIssuedBy: passportIssuedBy,
+            identificationCode: identificationCode,
             receiptFileName: receipt.name,
             receiptBase64: fileBase64,
             timestamp: new Date().toLocaleString("uk-UA"),
